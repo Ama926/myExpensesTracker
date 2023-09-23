@@ -53,7 +53,7 @@ struct FilteredDetailView: View {
                     }
                 }
                 //expense card view for currently selected date
-                ExpenseCard()
+                ExpenseCard(isFilter: true) 
                     .environmentObject(expenseViewModel)
                 
                 CustomSegmentedControl()

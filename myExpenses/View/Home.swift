@@ -52,6 +52,14 @@ struct Home: View {
             Color("BG")
                 .ignoresSafeArea()
         }
+        .fullScreenCover(isPresented: $expenseViewModel.addNewExpense){
+            expenseViewModel.ClearData()
+            
+        } content: {
+            NewExpense()
+                .environmentObject(expenseViewModel)
+            
+        }
     }
     
     //transactions View

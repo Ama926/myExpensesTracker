@@ -19,6 +19,15 @@ class ExpenseViewModel: ObservableObject {
     //filter view
     @Published var showFilterView: Bool = false
     
+    //new expense properties
+    @Published var addNewExpense: Bool = false
+    
+    @Published var amount: String = ""
+    @Published var type: ExpenseType = .all
+    @Published var date: Date = Date()
+    @Published var remark: String = ""
+    
+    
     
     init(){
         //fetching current month starting date
@@ -64,6 +73,21 @@ class ExpenseViewModel: ObservableObject {
         formatter.numberStyle = .currency
         
         return formatter.string(from: .init(value: value)) ?? "$0.00"
+    }
+    
+    //clearing all data
+    func ClearData(){
+        date = Date()
+        type = .all
+        remark = ""
+        amount = ""
+    }
+    
+    //save data
+
+    func saveData(){
+        //do activation here
+        print("Save")
     }
 }
 
